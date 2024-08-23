@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.bookcatalogapp.controller.BookController">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <TextField fx:id="titleField" promptText="Title"/>
+    <TextField fx:id="authorField" promptText="Author"/>
+    <TextField fx:id="yearField" promptText="Year"/>
+    <TextField fx:id="isbnField" promptText="ISBN"/>
+
+    <Button text="Add Book" onAction="#addBook"/>
+    <Button text="Update Book" onAction="#updateBook"/>
+    <Button text="Delete Book" onAction="#deleteBook"/>
+    <Button text="View All Books" onAction="#viewBooks"/>
+
+    <TableView fx:id="bookTable">
+        <columns>
+            <TableColumn text="ID" fx:id="idColumn"/>
+            <TableColumn text="Title" fx:id="titleColumn"/>
+            <TableColumn text="Author" fx:id="authorColumn"/>
+            <TableColumn text="Year" fx:id="yearColumn"/>
+            <TableColumn text="ISBN" fx:id="isbnColumn"/>
+        </columns>
+    </TableView>
+</VBox>
