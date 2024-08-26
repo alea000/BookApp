@@ -49,7 +49,6 @@ public class Bookcontroller {
 	        
 	   @FXML
 	   public void initialize() {
-		     idColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty().asObject());
 		     titleColumn.setCellValueFactory(cellData -> cellData.getValue().titleProperty());
 		     authorColumn.setCellValueFactory(cellData -> cellData.getValue().authorProperty());
 		     yearColumn.setCellValueFactory(cellData -> cellData.getValue().yearProperty().asObject());
@@ -81,7 +80,7 @@ public class Bookcontroller {
 			   selectedBook.setTitle(titleField.getText());
 			   selectedBook.setAuthor(authorField.getText());
 			   selectedBook.setYear(Integer.parseInt(yearField.getText()));
-			   selectedBook.setISBN(isbnField.getText());
+			   selectedBook.setIsbn(isbnField.getText());
 			   //selectedBook.setRead(readField.getText());
 			   
 			   bookService.save(selectedBook);
@@ -111,4 +110,4 @@ public class Bookcontroller {
 	
 	
 
-}
+
