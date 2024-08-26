@@ -18,11 +18,25 @@ import javafx.beans.property.StringProperty;
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Long id;
 
+	    //changed to javafx properties for the gui//changed this(year is not a String is an Intenger!!!
 	    private final StringProperty title = new SimpleStringProperty();
 	    private final StringProperty author = new SimpleStringProperty();
 	    private final IntegerProperty year = new SimpleIntegerProperty();
 	    private final StringProperty isbn = new SimpleStringProperty();
 
+
+	    //bc of JPA we need a constructor with no arguments
+	    public Book() {
+	    	
+	    }
+	    //here is the constructor w parameters for future instantiation
+	    public Book(String title, String author, int year, String isbn) {
+	    	this.title.set(title);
+	    	this.author.set(author);
+	    	this.year.set(year);
+	    	this.isbn.set(isbn);
+	    }
+	    
 	    // Getters and setters for properties
 	    public String getTitle() {
 	        return title.get();
@@ -80,6 +94,5 @@ import javafx.beans.property.StringProperty;
 	        this.id = id;
 	    }
 	}
-	
+	    
 
-}
